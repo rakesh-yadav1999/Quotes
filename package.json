@@ -1,14 +1,20 @@
 {
 	"name": "quotes",
 	"version": "1.0.0",
-	"description": "",
+	"description": "This website provides the Quotes, famous quotes, motivational quotes, inspirational quotes",
+	"homepage": "https://rakesh-yadav1999.github.io/quotes/",
 	"main": "index.js",
 	"scripts": {
-		"deploy": "gh-pages -d dist",
-		"homepage": "https://madhavrjha.github.io/quotes/"
+		"deploy": "gh-pages -d dist"
 	},
-	"keywords": ["Quotes"],
-	"author": "",
+	"keywords": [
+		"Quotes",
+		"famous quotes",
+		"motivational quotes",
+		"inspirational quotes",
+		"all Quotes"
+	],
+	"author": "Rikesh Yadav",
 	"license": "ISC",
 	"dependencies": {
 		"gh-pages": "^3.1.0"
