@@ -5,9 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"deploy": "gh-pages -d dist",
-		"homepage" : "https://rakesh-yadav1999.github.io/quotes/"
+		"homepage": "https://madhavrjha.github.io/quotes/"
 	},
-	"keywords": [],
+	"keywords": ["Quotes"],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
