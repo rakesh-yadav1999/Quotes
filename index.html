@@ -1,138 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="Content-type" content="text.html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="copyright" content="This website all copyrights are reserved by RIKESH YADAV" />
-    <meta name="discription" content="This website shows the famous quotes. you can share the famous quotes to yur friends in whatsapp, telegram, Twitter" />
-    <meta name="keywords" content="famous-quotes, quotes, share-quotes, some-famous-quotes, inspirtional-quotes, motivational-quotes" />
-    <meta name="robots" content="all" />
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="Content-type" content="text.html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="copyright"
+			content="This website all copyrights are reserved by RIKESH YADAV"
+		/>
+		<meta
+			name="discription"
+			content="This website shows the famous quotes. you can share the famous quotes to yur friends in whatsapp, telegram, Twitter"
+		/>
+		<meta
+			name="keywords"
+			content="famous-quotes, quotes, share-quotes, some-famous-quotes, inspirtional-quotes, motivational-quotes"
+		/>
+		<meta name="author" content="Rikesh Yadav, yadavrikesh1999@gmail.com" />
+		<meta name="robots" content="all" />
 
-    <link rel=icon href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/svgs/solid/quote-left.svg>
-    <title> Quotes</title>
+		<link rel=icon
+		href=https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14/svgs/solid/quote-left.svg>
+		<title>Quote | Fill Someone with Positivity</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    
-    
-    <style>
-    	@import url('https://fonts.googleapis.com/css2?family=Langar&display=swap');
-    	@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
-        body{
-            background-color: #f4f4f4;
-            margin: 0;
-            height: 100%;
-        }
-        #upper{
-            background-color: #e0e0e0;
-            width: 60%;
-            margin: auto;
-            margin-top: 10%;
-            border-radius: 3%;
-            box-shadow: 7px 7px 5px #4f4f4f;
-            overflow: hidden;
-        }
-        #quotes{
-            padding: 5%;
-            font-size: 2em;
-            user-select: none;
-            font-family: 'Langar', cursive;
-        }
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+			integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="./style.css" />
+		<script src="./script.js" defer></script>
+	</head>
+	<body>
+		<div class="box">
+			<h1>
+				Quote <br />
+				<span>- fill someone with positivity</span>
+			</h1>
+			<div class="quote-container">
+				<div class="quote-box">
+					<p id="quote"></p>
+					<p id="author"></p>
+				</div>
+			</div>
 
-        #author{
-            padding: 5%;
-            font-size: 20px;
-            font-weight: 900;
-            font-family: 'Cedarville Cursive', cursive;
-            text-align: right;
-            user-select: none;
-        }
+			<br />
 
+			<button id="newQ" class="change-button">
+				<i class="fas fa-sync-alt"></i>
+			</button>
 
-        #butt div, #share div{
-        	text-align: center;
-        	user-select: none;
-        	cursor: pointer;
-            background-color: rgb(57, 57, 160);
-            color: white;
-            border: none;
-            font-size: 1.5em;
-            padding: 2%;
-        }
-
-        #share{
-            display: flex;
-        }
-
-        #share div{
-            width: 33.33%;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="upper">
-        <div id="quotes"></div>
-        <div id="author"></div>
-        <div id="butt">
-        	<div id="newQ"> <i class="fas fa-plus"></i> Find New Quotes</div>
-        </div>
-
-        <div id="share">
-    		<div id="tweet" style="background: #1DA1F2;" title="Share On Twitter"><i class="fab fa-twitter"></i>  </div>
-    		<div id="wh" style="background: #25D366;" title="Share On WhatsApp"><i class="fab fa-whatsapp"></i>  </i></div>
-    		<div id="te" style="background: #0088CC;" title="Share On Telegram"><i class="fab fa-telegram"></i> </i></div>
-        </div>
-
-    </div>
-
-
-    <script>
-
-        const quotes = document.getElementById("quotes");
-        const author = document.getElementById("author");
-        const newQ = document.getElementById("newQ");
-        const wh = document.getElementById("wh");
-        const te = document.getElementById("te");
-
-        let realData = "";
-        let text = "";
-        let url = "https://rakesh-yadav1999.github.io/quotes/";
-
-        const tweetQ = () => {
-            window.open(`https://twitter.com/intent/tweet?text=${text}`);
-        }
-
-        const whatQ = () => {
-            window.open(`https://wa.me/?text=${text}`);
-        } 
-        
-        const teQ = () => {
-            window.open(`https://t.me/share/url?url=${url}&text=${text}`);
-        }
-
-        const getNewQuotes = () => {
-            let rnum = Math.floor(Math.random()*1000);
-            quotes.innerText = `${realData[rnum].text}`;
-            text = `${realData[rnum].text}`;
-            realData[rnum].author == null ? author.innerText = "- Unknown" : author.innerText = `- ${realData[rnum].author}`;
-        }
-
-        const getQuotes = async () =>{
-            try{
-                let data = await fetch("https://type.fit/api/quotes");
-                realData = await data.json();
-                getNewQuotes();
-            }
-            catch(error){}
-        } 
-
-        getQuotes();
-
-        newQ.addEventListener('click', getNewQuotes);
-        tweet.addEventListener('click', tweetQ);
-        wh.addEventListener('click', whatQ);
-        te.addEventListener('click', teQ);
-    </script>
-</body>
+			<div class="social-container">
+				<div id="tweet" class="twitter">
+					<i class="fab fa-twitter"></i>
+				</div>
+				<div id="wh" class="whatsapp">
+					<i class="fab fa-whatsapp"></i>
+				</div>
+				<div id="te" class="telegram">
+					<i class="fab fa-telegram"></i>
+				</div>
+			</div>
+		</div>
+	</body>
 </html>
